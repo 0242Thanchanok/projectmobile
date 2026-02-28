@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* ---------------- HEADER BLUE BAR ---------------- */
+.top-bar {
+    background: #1C4D8D;
+    color: #C2E4F2;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    gap: 20px;
+}
+
+.logo {
+    height: 55px;
+}
+
+.title-box {
+    flex-grow: 1;
+}
+
+.title { font-size: 20px; font-weight: bold; line-height: 1.3; }
+.subtitle { font-size: 13px; color: #FF8246; }
+
+/* ---------- Language Switch ---------- */
+.right-tools {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+
+.search-icon {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.search-box input {
+    width: 160px;              /* ให้เห็นตลอด */
+    padding: 8px 12px;
+    border-radius: 6px;        /* มนเล็กน้อย */
+    border: 2px solid #FFFEEB; /* กรอบสีนี้ */
+    background: #FFFEEB;       /* พื้นหลังสีนี้ */
+    outline: none;
+    font-size: 14px;
+}
+
+/* ---------- HAMBURGER (Mobile Only) ---------- */
+.hamburger {
+    font-size: 26px;
+    cursor: pointer;
+    display: none;
+    color: white;
+}
+
+/* ---------------- MENU BAR ---------------- */
+.menu {
+    background: #C2E4F2;        
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;    
+    gap: 40px;
+    font-size: 16px;
+    font-weight: 550;
+
+    width: 85%;
+    margin: 0 auto;
+    padding: 25px 20px;
+    border-radius: 25px;
+
+    margin-top: -10px;
+    position: relative;
+    z-index: 10;
+}
+
+.menu a,
+.menu .dropdown {
+    text-decoration: none;
+    color: #1C4D8D;             
+    cursor: pointer;
+}
+
+.menu .active {
+    border-bottom: 3px solid #1C4D8D;  
+    padding-bottom: 0px;
+    line-height: 1;
+    display: inline-block;
+}
+/* ---------------- SIDE MENU ---------------- */
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: linear-gradient(180deg, #1C4D8D, #081F3F);
+    color: white;
+    padding: 40px 25px;
+    transition: 0.4s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu.show {
+    right: 0;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-header input {
+    width: 80%;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+
+.close-btn {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.menu-links {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 10px;
+}
+
+.menu-footer {
+    margin-top: auto;
+    color: #FF8246;
+    font-size: 14px;
+}
+
+/* Active สำหรับ mobile menu */
+.menu-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 10px;
+    display: block;
+}
+
+/* เส้นใต้ตอนกด */
+.menu-links a:focus,
+.menu-links a:active {
+    border-bottom: 3px solid #FF8246;
+}
+/* ---------------- RESPONSIVE ---------------- */
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media(max-width: 650px) {
+
+    /* แสดง hamburger */
+    .hamburger {
+        display: block;
+    }
+
+    /* ซ่อน navbar ปกติ */
+    .menu {
+        display: none;
+    }
+
+    /* ซ่อน search ตอนจอเล็ก */
+    .search-box {
+        display: none;
+    }
+
+    /* ปรับ padding header */
+    .top-bar {
+        padding: 15px 20px;
+    }
+}
+
+/* จอใหญ่ */
+@media(min-width: 650px) {
+
+    /* ซ่อน hamburger */
+    .hamburger {
+        display: none;
+    }
+
+}
